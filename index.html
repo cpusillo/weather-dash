@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <h3>Weather Dashboard</h3>
+    </nav>
+
+    <section class="currentWeather">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <section class="user-section">
+                        <div class="container">
+
+                            <form class="form-inline">
+                                <div class="form-group mb-2">
+                                    <input type="text" id="cityInput" class="form-control"
+                                        placeholder="Manhattan"><br />
+                                    <button id="submitBtn" type="submit" class="btn btn-danger">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="cityPicker">
+                            <ul id="cityList">
+                                <li>Austin</li>
+                                <li>Chicago</li>
+                                <li>New York</li>
+                                <li>Orlando</li>
+                                <li>San Francisco</li>
+                                <li>Seattle</li>
+                                <li>Denver</li>
+                                <li>Atlanta</li>
+                            </ul>
+                    </section>
+                </div>
+
+                <div class="col-lg-8">
+                    <section class="display-section">
+                        <div class="container">
+                            <h4 id="cityName"></h4><span id="dateString"></span><img id="weather_image" src="">
+                            <p>Temperature: <span id="temperature"></span>&#730 F</p>
+                            <p>Humidity: <span id="humidity"></span>%</p>
+                            <p>Wind Speed: <span id="wind"></span></p>
+                        </div>
+                    </section>
+                    <div class="row">
+                        <section class="forecastWeather">
+                            <div class="container">
+                                <h3>5-Day Forecast: </h3>
+                                <div class="row" id="forecastDays">
+                                    <div id="forecastDays">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

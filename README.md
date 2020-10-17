@@ -1,7 +1,7 @@
 # weather-dash
-This is a weather dashboard app that allows the user to select a pre-provided city from the list, or enter their own city!
+This is a weather app that will allow the user to view the current and upcoming weather conditions of a city of their choice!
 
-Once a city has been selected, the temperature for the day will load and the 5 day forecast will load underneath.
+Once a city has been selected, the temperature for the day will load and the 5 day forecast will load underneath. You can toggle between Celsius (metric) and Fahrenheit (imperial) from the right side of the navigation menu.
 
 ## How to use this app
 * The application pre-loads a city for you.

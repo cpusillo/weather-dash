@@ -1,3 +1,17 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+}
+h1,h2,h3,h4,h5 {
+    font-family: 'Carter One', cursive;
+}
+nav form {
+    color: white;
+}
+.form-check-input {
+    margin: 0 10px !important;
+}
 nav h3 {
     color: white;
 }
@@ -9,17 +23,16 @@ h4 {
 section {
     padding-top: 10px;
 }
+.currentWeather {
+    padding-top: 30px;
+}
 .user-section {
     background-color: #f1eded;
     border-radius: 10px;
 }
-
 .display-section {
     border: 1px solid #f1eded;
     border-radius: 10px;
-}
-.forecast-weather{
-    margin-left: 15px;
 }
 #day1,
 #day2,

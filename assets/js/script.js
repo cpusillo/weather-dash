@@ -4,23 +4,36 @@
 
     // Assign our DOM elements to variables.
     var cityInput = $("#cityInput");
-    var day1 = $("#day1");
-    var day2 = $("#day2");
-    var day3 = $("#day3");
+    var isFahrenheit = true;
+    var unitSelected;
+    var unit = "F";
 
-    // Set our fahrenheit flag to true, our default state.
-    var showingForecast = true;
 
-    // Have Atlanta load on the page by default.
-    setWeather("Atlanta");
+    // Have Riyadh, Saudi Arabia load on the page by default.
+    setWeather("Riyadh");
 
+    // Allow our user to switch between Fahrenheit and Celsius via radio
+    // buttons so only one can be selected at a time.
+    $(".units").on("click", "input", function() {
+        //console.log($(this).attr("value"))
+        unitSelected = $(this).attr("value");
+        if (unitSelected === "fahrenheit"){
+            isFahrenheit = true;
+            unit = "F";
+
+        } else {
+            isFahrenheit = false;
+            unit = "C";
+        }
+            })
 
     // Define what our submit button does.
-    $("#submitBtn").on("click", function (e) {
+    $("#submitBtn").on("click", function() {
         // Stop the input box from clearing out on button click.
         e.preventDefault();
         // Get the user supplied city name from the input box.
         city = cityInput.val().trim();
+
         setWeather(city)
     });
 
@@ -40,7 +53,12 @@
     */
     function setWeather(city) {
         // Define our query URL, supply the user input and API key to the query.
+        
+        if(isFahrenheit){
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=b774102802580c232f4e227fa165c18f";
+        } else {
+        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=metric&appid=b774102802580c232f4e227fa165c18f";
+        }
 
         // Make our AJAX call to pull our necessary values
         $.ajax({
@@ -52,7 +70,7 @@
 
             // Grab our DOM elements and displa them to the page.
             $("#cityName").text(response.city.name);
-            $("#temperature").text(response.list[0].main.temp);
+            $("#temperature").html(response.list[0].main.temp + " &#730" + unit);
             $("#main_weather").text(response.list[0].weather[0].main)
             $("#humidity").text(response.list[0].main.humidity);
             $("#wind").text(response.list[0].wind.speed);
@@ -60,15 +78,13 @@
             $("#dateString").text(dateTime);
 
             getDailyForecast(city);
-        });
 
-    }
-    /* 
+
+            /* 
         getDailyForecast() takes one argument, city, and displays a 5 day forecast of that
         city's weather.
     */
     function getDailyForecast(city) {
-        var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=b774102802580c232f4e227fa165c18f";
         showingForecast = true;
 
         // Make our AJAX call to pull our necessary values
@@ -91,8 +107,8 @@
                 var iconImage = $("<img>");
 
                 newDiv.attr("class", "col-sm-2").appendTo("#forecastDays");
-                newDiv.html("<h5>" + dateTime + "</h5>").appendTo(newDiv);
-                pTemp.html("Temperature: " + response.list[i].main.temp).appendTo(newDiv);
+                newDiv.html("<p>" + dateTime + "</p>").appendTo(newDiv);
+                pTemp.html("Temperature: " + response.list[i].main.temp  + " &#730" + unit).appendTo(newDiv);
                 pHumid.html("Humidity: " + response.list[i].main.humidity).appendTo(newDiv);
                 iconImage.attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png").appendTo(newDiv);
 
@@ -101,6 +117,12 @@
             }
         });
     }
+
+
+        });
+
+    }
+    
 
     /*
         ConvertDate() takes one argument, date which is the supplied

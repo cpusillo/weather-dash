@@ -37,8 +37,13 @@ section {
 #day5
 {
     text-align: center;
-    background-color: lightblue;
+    background-color: #34495e;
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
+    color: #fff;
+    /* Beautify our forecasts with shadows, for all browsers */
+    -webkit-box-shadow: 0 5px 5px 0 rgb(145, 143, 143);  
+    -moz-box-shadow:    0 5px 5px 0 rgb(145, 143, 143);  
+    box-shadow:         0 5px 5px 0 rgb(145, 143, 143); 
 }

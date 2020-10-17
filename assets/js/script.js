@@ -66,6 +66,7 @@
             method: "GET"
         }).then(function (response) {
             // Make the dateTime look better than any of what is provided.
+            console.log(response);
             var dateTime = convertDate(response.list[0].dt);
 
             // Grab our DOM elements and displa them to the page.
@@ -76,6 +77,9 @@
             $("#wind").text(response.list[0].wind.speed);
             $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + response.list[0].weather[0].icon + ".png");
             $("#dateString").text(dateTime);
+            $("#feels").html(response.list[0].main.feels_like + " &#730" + unit);
+            $("#max").html(response.list[0].main.temp_max + " &#730" + unit);
+            $("#min").html(response.list[0].main.temp_min + " &#730" + unit);
 
             getDailyForecast(city);
 
@@ -102,14 +106,15 @@
                 var dateTime = convertDate(response.list[i].dt);
                 // Create, style, and set our dynamic DOM elements
                 var newDiv = $("<div>").attr("id", "day" + j);
+                var newUL = $("<ul>");
                 var pTemp = $("<p>");
                 var pHumid = $("<p>");
                 var iconImage = $("<img>");
 
-                newDiv.attr("class", "col-sm-2").appendTo("#forecastDays");
+                newDiv.attr("class", "col-lg-2").appendTo("#forecastDays");
                 newDiv.html("<p>" + dateTime + "</p>").appendTo(newDiv);
-                pTemp.html("Temperature: " + response.list[i].main.temp  + " &#730" + unit).appendTo(newDiv);
-                pHumid.html("Humidity: " + response.list[i].main.humidity).appendTo(newDiv);
+                pTemp.html('<i class="fas fa-thermometer-full"></i>' + response.list[i].main.temp  + " &#730" + unit).appendTo(newDiv);
+                pHumid.html('<i class="fas fa-smog"></i>' + response.list[i].main.humidity + "%").appendTo(newDiv);
                 iconImage.attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png").appendTo(newDiv);
 
                 // Append our dynamic elements to the DOM.

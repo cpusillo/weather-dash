@@ -15,7 +15,7 @@ nav form {
 nav h3 {
     color: white;
 }
-h4 {
+#cityName {
     display: inline;
     margin-right: 10px;
 
@@ -34,20 +34,26 @@ section {
     border: 1px solid #f1eded;
     border-radius: 10px;
 }
+body i {
+    margin-right: 10px;
+}
+#forecastDays {
+    margin: 0 auto;
+}
 #day1,
 #day2,
 #day3,
 #day4,
 #day5
 {
-    text-align: center;
     background-color: #34495e;
-    margin: 5px;
-    padding: 10px;
+    padding: 5px 25px;
+    margin: 10px;
     border-radius: 10px;
     color: #fff;
     /* Beautify our forecasts with shadows, for all browsers */
     -webkit-box-shadow: 0 5px 5px 0 rgb(145, 143, 143);  
     -moz-box-shadow:    0 5px 5px 0 rgb(145, 143, 143);  
     box-shadow:         0 5px 5px 0 rgb(145, 143, 143); 
+    font-size: 12px;
 }

@@ -47,7 +47,7 @@
                                 <div class="form-group mb-2">
                                     <input type="text" id="cityInput" class="form-control"
                                         placeholder="Manhattan"><br />
-                                    <button id="submitBtn" type="submit" class="btn btn-danger">Submit</button>
+                                    <button id="submitBtn" type="submit" class="btn btn-dark">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -85,10 +85,20 @@
                 <div class="col-lg-8">
                     <section class="display-section">
                         <div class="container">
-                            <h4 id="cityName"></h4><span id="dateString"></span><img id="weather_image" src="">
-                            <p>Temperature: <span id="temperature"></span></p>
-                            <p>Humidity: <span id="humidity"></span>%</p>
-                            <p>Wind Speed: <span id="wind"></span></p>
+                            <h3 id="cityName"></h3><span id="dateString"></span><img id="weather_image" src="">
+                            <div class="row">
+                            <div class="col-lg-6">
+                            <p><i class="fas fa-thermometer-full"></i> Temperature: <span id="temperature"></span></p>
+                            <p><i class="fas fa-temperature-high"></i> Max Temp: <span id="max"></span></p>
+                            <p><i class="fas fa-temperature-low"></i> Min Temp: <span id="min"></span></p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p><i class="fas fa-comment-dots"></i> Feels Like: <span id="feels"></span></p>
+                                <p><i class="fas fa-smog"></i> Humidity: <span id="humidity"></span>%</p>
+                                <p><i class="fas fa-wind"></i> Wind Speed: <span id="wind"></span></p>
+
+                            </div>
+                        </div>
                         </div>
                     </section>
                     <div class="row">

@@ -1,0 +1,44 @@
+nav h3 {
+    color: white;
+}
+h4 {
+    display: inline;
+    margin-right: 10px;
+
+}
+section {
+    padding-top: 10px;
+}
+.user-section {
+    background-color: #f1eded;
+    border-radius: 10px;
+}
+
+.display-section {
+    border: 1px solid #f1eded;
+    border-radius: 10px;
+}
+.forecast-weather{
+    margin-left: 15px;
+}
+
+#cityList {
+    list-style: none;
+}
+#cityList li {
+    padding: 5px;
+    width: 50%;
+
+}
+#day1,
+#day2,
+#day3,
+#day4,
+#day5
+{
+    text-align: center;
+    background-color: lightblue;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}

@@ -21,15 +21,6 @@ section {
 .forecast-weather{
     margin-left: 15px;
 }
-
-#cityList {
-    list-style: none;
-}
-#cityList li {
-    padding: 5px;
-    width: 50%;
-
-}
 #day1,
 #day2,
 #day3,

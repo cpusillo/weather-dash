@@ -26,8 +26,8 @@
 
 
     // Define what our city list clicks do.
-    $("#cityList").on("click", "li", function (e) {
-        // Find what li was clicked on, get value
+    $("#cityList").on("click", "td", function (e) {
+        // Find what td was clicked on, get value
         var clicked = $(this).text();
         // Pass clicked value into our setWeather function as an arg.
         setWeather(clicked);

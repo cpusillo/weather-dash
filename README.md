@@ -3,6 +3,8 @@ This is a weather app that will allow the user to view the current and upcoming 
 
 Once a city has been selected, the temperature for the day will load and the 5 day forecast will load underneath. You can toggle between Celsius (metric) and Fahrenheit (imperial) from the right side of the navigation menu.
 
+[Click here to check it out!](https://cpusillo.github.io/weather-dash/)
+
 ## How to use this app
 * The application pre-loads a city for you.
 * Enter a new city name in the search bar and hit "Submit"

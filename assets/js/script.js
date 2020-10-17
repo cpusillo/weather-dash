@@ -121,7 +121,7 @@
                         var iconImage = $("<img>");
 
                         newDiv.attr("class", "col-lg-2").appendTo("#forecastDays");
-                        newDiv.html("<p>" + dateTime + "</p>").appendTo(newDiv);
+                        newDiv.html("<h6>" + dateTime + "</h6>").appendTo(newDiv);
                         pTemp.html('<i class="fas fa-thermometer-full"></i>' + response.list[i].main.temp + " &#730" + unit).appendTo(newDiv);
                         pHumid.html('<i class="fas fa-smog"></i>' + response.list[i].main.humidity + "%").appendTo(newDiv);
                         iconImage.attr("src", "http://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png").appendTo(newDiv);

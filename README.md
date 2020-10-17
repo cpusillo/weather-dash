@@ -12,4 +12,4 @@ Once a city has been selected, the temperature for the day will load and the 5 d
 
 **Here's how the site looks**
 
-[!Screenshot](https://github.com/cpusillo/weather-dash/blob/main/assets/img/Screenshot.jpg)
+![Screenshot](https://github.com/cpusillo/weather-dash/blob/main/assets/img/Screenshot.jpg)

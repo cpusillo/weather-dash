@@ -6,6 +6,10 @@ body {
 h1,h2,h3,h4,h5 {
     font-family: 'Carter One', cursive;
 }
+section {
+    padding-top: 10px;
+}
+/* NAVIGATION */
 nav form {
     color: white;
 }
@@ -15,13 +19,12 @@ nav form {
 nav h3 {
     color: white;
 }
+
+/* CITY DISPLAY SECTIONS */
 #cityName {
     display: inline;
     margin-right: 10px;
 
-}
-section {
-    padding-top: 10px;
 }
 .currentWeather {
     padding-top: 30px;
@@ -55,4 +58,24 @@ body i {
     -webkit-box-shadow: 0 5px 5px 0 rgb(145, 143, 143);  
     -moz-box-shadow:    0 5px 5px 0 rgb(145, 143, 143);  
     box-shadow:         0 5px 5px 0 rgb(145, 143, 143); 
+    font-size: 12px;
+}
+
+/* CSS FOR UVINDEX COLORING */
+.uvi {
+    padding: 5px;
+    border-radius: 14px;
+    color: white;
+}
+
+.severe {
+    background-color:#e74c3c;
+}
+
+.moderate {
+    background-color: #f39c12;
+}
+
+.favorable {
+    background-color: #27ae60;
 }

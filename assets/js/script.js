@@ -76,6 +76,13 @@
             method: "GET"
         }).then(function (response) {
 
+            // Store the lat and lon data for use for the uvi
+            var lattitude = response.city.coord.lat;
+            var longitude = response.city.coord.lon;
+
+            // call getUVI, pass in lat and lon.
+            getUVI(lattitude, longitude);
+
             // Make the dateTime look better than any of what is provided by the API.
             var dateTime = convertDate(response.list[0].dt);
 
@@ -115,7 +122,6 @@
                         var dateTime = convertDate(response.list[i].dt);
                         // Create, style, and set our dynamic DOM elements
                         var newDiv = $("<div>").attr("id", "day" + j);
-                        var newUL = $("<ul>");
                         var pTemp = $("<p>");
                         var pHumid = $("<p>");
                         var iconImage = $("<img>");
@@ -136,6 +142,50 @@
         });
 
     }
+
+    /*
+        getUVI() takes two arguments, lattitude and longitude, supplied
+        from our openweathermap forecast API JSON. Returns the UV Index
+        of the selected city.
+    */
+    function getUVI(lattitude, longitude){
+        var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lattitude+"&lon=" +longitude+"&appid=b774102802580c232f4e227fa165c18f";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+
+            // Pull our uvindex data from the JSON, store in variable uvi.
+            var uvi = parseFloat(response.value);
+            console.log(uvi);
+            // Push uvi to the DOM.
+            $("#uvindex").html(uvi);
+
+            // Determine the conditions of the uv index
+            // Green = favorable, orange = moderate, red = severe.
+            if(uvi >= 0 && uvi <= 2){
+                // Remove any dynamically applied classes.
+                $("#uvindex").removeClass();
+                // Add the appropriate color class.
+                $("#uvindex").addClass("uvi favorable");
+            }
+            else if(uvi > 2 && uvi <= 5){
+                // Remove any dynamically applied classes.
+                $("#uvindex").removeClass();
+                // Add the appropriate color class.
+                $("#uvindex").addClass("uvi moderate");
+
+            }
+            else if(uvi > 5 && uvi <= 10){
+                // Remove any dynamically applied classes.
+                $("#uvindex").removeClass();
+                // Add the appropriate color class.
+                $("#uvindex").addClass("uvi severe")
+            }
+
+        });
+        
+   }
     /*
         ConvertDate() takes one argument, date, which is the supplied
         dt value from openweathermap.org's API. The date is supplied in

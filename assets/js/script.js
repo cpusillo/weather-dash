@@ -149,7 +149,7 @@
         of the selected city.
     */
     function getUVI(lattitude, longitude){
-        var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lattitude+"&lon=" +longitude+"&appid=b774102802580c232f4e227fa165c18f";
+        var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat="+lattitude+"&lon=" +longitude+"&appid=b774102802580c232f4e227fa165c18f";
         $.ajax({
             url: queryURL,
             method: "GET"

@@ -3,6 +3,8 @@ The Weather-Dash application provides a quick and minimal UI in which users can 
 
 [Click here to try it out!](https://cpusillo.github.io/weather-dash/)
 
+[Check out the Open Weather Map API](https://openweathermap.org/)
+
 ## How to use this app
 * Either search for a city name in the search bar in the top left corner of the page, or click on a city name pre-populated for you.
 * The city's weather information will be displayed in the dashboard, as well as the 5 day forecast.
